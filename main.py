@@ -13,6 +13,7 @@ piso_bg = pygame.image.load("shooting_game/media/Land_BG.png")
 agua_bg = pygame.image.load("shooting_game/media/Water_BG.png")
 nube_1 = pygame.image.load("shooting_game/media/Cloud1.png")
 nube_2 = pygame.image.load("shooting_game/media/Cloud2.png")
+mira = pygame.image.load("shooting_game/media/crosshair.png")
 
 #Animacion de escenario
 posicion_piso_y = 450
@@ -25,6 +26,8 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+        if event.type == pygame.MOUSEMOTION:
+            mira_rect = mira.get_rect(center = event.pos)
 
     screen.blit(madera_bg,(0, 0))
 
@@ -46,5 +49,8 @@ while True:
     screen.blit(nube_2,(150,screen_height/6))
     screen.blit(nube_1,(screen_width/2,100))
     screen.blit(nube_2,(700,0))
+
+    screen.blit(mira, mira_rect)
+
     pygame.display.update()
-    clock.tick(60)
+    #clock.tick(60)
