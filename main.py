@@ -6,6 +6,12 @@ screen_width = 1024
 screen_height = 576
 screen = pygame.display.set_mode((screen_width, screen_height))
 clock = pygame.time.Clock()
+light_grey = (200, 200, 200)
+
+#Texto en pantalla
+game_font = pygame.font.Font(None, 60)
+superficie_texto = game_font.render('Venciste!', True, light_grey) 
+texto_rect = superficie_texto.get_rect(center = (512, 288) )
 
 #imagenes
 madera_bg = pygame.image.load("shooting_game/media/Wood_BG.png")
@@ -50,6 +56,9 @@ while True:
 
     for patos_rect in patos_list:
         screen.blit(patos, patos_rect)
+    
+    if len(patos_list) == 0:
+        screen.blit(superficie_texto, texto_rect)
 
     posicion_agua_y -= velocidad_agua 
     if posicion_agua_y <= 470 or posicion_agua_y >= 510:
