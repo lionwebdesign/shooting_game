@@ -13,7 +13,7 @@ piso_bg = pygame.image.load("shooting_game/media/Land_BG.png")
 agua_bg = pygame.image.load("shooting_game/media/Water_BG.png")
 nube_1 = pygame.image.load("shooting_game/media/Cloud1.png")
 nube_2 = pygame.image.load("shooting_game/media/Cloud2.png")
-mira = pygame.image.load("shooting_game/media/crosshair.png")
+mira = pygame.image.load("shooting_game/media/crosshair2.png")
 patos = pygame.image.load("shooting_game/media/duck.png")
 
 #Animacion de escenario
@@ -36,6 +36,10 @@ while True:
             sys.exit()
         if event.type == pygame.MOUSEMOTION:
             mira_rect = mira.get_rect(center = event.pos)
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            for index, patos_rect in enumerate(patos_list):
+                if mira_rect.colliderect(patos_rect):
+                    del patos_list[index]
 
     screen.blit(madera_bg,(0, 0))
 
