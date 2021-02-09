@@ -17,7 +17,7 @@ nube_2 = pygame.image.load("shooting_game/media/Cloud2.png")
 #Animacion de escenario
 posicion_piso_y = 450
 velocidad_piso = 1
-posicion_agua_y = 460
+posicion_agua_y = 475
 velocidad_agua = 2
 
 while True:
@@ -37,7 +37,7 @@ while True:
 
     posicion_agua_y -= velocidad_agua 
 
-    if posicion_agua_y <= 450 or posicion_agua_y >= 510:
+    if posicion_agua_y <= 470 or posicion_agua_y >= 510:
         velocidad_agua *= -1
 
     screen.blit(agua_bg,(0, posicion_agua_y))
