@@ -6,6 +6,7 @@ screen_width = 1024
 screen_height = 576
 screen = pygame.display.set_mode((screen_width, screen_height))
 clock = pygame.time.Clock()
+pygame.mouse.set_visible(False)
 light_grey = (200, 200, 200)
 
 #Texto en pantalla
