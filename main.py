@@ -45,7 +45,7 @@ while True:
             mira_rect = mira.get_rect(center = event.pos)
         if event.type == pygame.MOUSEBUTTONDOWN:
             for index, patos_rect in enumerate(patos_list):
-                if mira_rect.colliderect(patos_rect):
+                if patos_rect.collidepoint(event.pos):
                     del patos_list[index]
 
     screen.blit(madera_bg,(0, 0))
